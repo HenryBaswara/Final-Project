@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop-up Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #popupTable { 
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid #ccc;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            width: 80%;
+            max-width: 600px;
+        }
+        #popupTable table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        #popupTable th, #popupTable td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+        #popupTable th {
+            background-color: #f4f4f4;
+        }
+        #closeBtn {
+            display: block;
+            margin: 10px auto;
+            padding: 5px 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="showTableBtn">Show Plan Details</button>
+
+    <div id="popupTable">
+        <table>
+            <tr>
+                <th>Plan Features</th>
+                <th>Basic $200/month</th>
+                <th>Premium $500/month</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <button id="closeBtn">Close</button>
+    </div>
+
+    <script>
+        document.getElementById('showTableBtn').addEventListener('click', function() {
+            document.getElementById('popupTable').style.display = 'block';
+        });
+
+        document.getElementById('closeBtn').addEventListener('click', function() {
+            document.getElementById('popupTable').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
